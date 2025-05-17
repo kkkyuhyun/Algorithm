@@ -1,0 +1,37 @@
+/* 제너릭 연습 */ 
+
+class Printer{
+  void printer(Integer a){
+    System.out.print("A"+a);
+  }
+  void print(Object a){
+    System.out.print("B"+b);
+  }
+  void print(Number a){
+    System.out.print("C"+a):
+  }
+}
+//강제로 Integer로 인식하게 만드는 방법1. 생성자에 Integer를 넣어서 value로 던져버리면 인식을 하게 된다.
+public class Main{
+  public static void main(String[] args){
+    new Container<>(0).print();
+}
+  public static class Container<T>{
+   Integer  value;
+    public Container(Integer t){
+      value=t;
+    }
+    public void print(){
+      new Printer().print((Integer).value);
+    }
+  }
+}
+  
+/* 강제로 Integer로 인식하게 만드는 방법2.Printer라는 객체 생성하고 객체 안에 구현되어 있는 메소드를 생성 리턴 출력 시 파라미터 인자값을 넣을 떄 강제로 Integer로 인식하게 만들기
+  public void print(){
+    new Printer().print((Integer) value);
+    }
+  }
+} */
+
+  
